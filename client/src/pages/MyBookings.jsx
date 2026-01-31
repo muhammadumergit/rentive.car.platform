@@ -56,16 +56,26 @@ const MyBookings = () => {
               </div>
               <p className='text-lg font-medium mt-2'>{booking.car.brand} {booking.car.model}</p>
 
-              <p className='text-gray-500'>{booking.car.year} • {booking.car.category} • {booking.car.location}</p>
+              <p className='text-gray-500'>{booking.car.year} • {booking.car.category} • {booking.car.location} </p>
             </div>
 
             {/* Booking Info */}
             <div className='md:col-span-2'>
               <div className='flex items-center gap-2'>
                 <p className='px-3 py-1.5 bg-light rounded'>Booking #{index+1}</p>
-                <p className={`px-3 py-1 text-xs rounded-full ${booking.status === 'confirmed' ? 'bg-green-400/15 text-green-600' : 'bg-red-400/15 text-red-600'}`}>{booking.status}</p>
-              </div>
+               <p
+  className={`px-3 py-1 text-xs rounded-full ${
+    booking.status === 'confirmed'
+      ? 'bg-green-400/15 text-green-600'
+      : 'bg-red-400/15 text-red-600'
+  }`}
+>
+  {booking.status}
+</p>
+ 
+               </div>
 
+              {/* Rental Period */}
               <div className='flex items-start gap-2 mt-3'>
                 <img src={assets.calendar_icon_colored} alt="" className='w-4 h-4 mt-1'/>
                 <div>
@@ -74,6 +84,7 @@ const MyBookings = () => {
                 </div>
               </div>
 
+              {/* Location */}
               <div className='flex items-start gap-2 mt-3'>
                 <img src={assets.location_icon_colored} alt="" className='w-4 h-4 mt-1'/>
                 <div>
@@ -81,6 +92,16 @@ const MyBookings = () => {
                   <p>{booking.car.location}</p>
                 </div>
               </div>
+
+              {/* Renter Contact Number (Added here) */}
+              <div className='flex items-start gap-2 mt-3'>
+                <img src={assets.contact_icon || assets.users_icon} alt="" className='w-4 h-4 mt-1'/>
+                <div>
+                  <p className='text-gray-500'>Contact Number</p>
+                  <p className='text-primary font-medium'>{booking.car.contact || 'N/A'}</p>
+                </div>
+              </div>
+
             </div>
 
            {/* Price */}

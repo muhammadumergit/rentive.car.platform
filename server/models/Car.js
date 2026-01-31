@@ -13,6 +13,7 @@ const carSchema = new mongoose.Schema({
     transmission: { type: String, required: true },
     pricePerDay: { type: Number, required: true },
     location: { type: String, required: true },
+    contact: { type: String, required: true },
     description: { type: String, required: true },
     isAvaliable: {type: Boolean, default: true}
 },{timestamps: true})

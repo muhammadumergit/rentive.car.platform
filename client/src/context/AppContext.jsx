@@ -16,6 +16,7 @@ export const AppProvider = ({ children })=>{
     const [user, setUser] = useState(null)
     const [isOwner, setIsOwner] = useState(false)
     const [showLogin, setShowLogin] = useState(false)
+    const [showForgotPassword, setShowForgotPassword] = useState(false);
     const [pickupDate, setPickupDate] = useState('')
     const [returnDate, setReturnDate] = useState('')
 
@@ -67,6 +68,7 @@ export const AppProvider = ({ children })=>{
     // useEffect to fetch user data when token is available
     useEffect(()=>{
         if(token){
+        
             axios.defaults.headers.common['Authorization'] = `${token}`
             fetchUser()
         }
@@ -75,7 +77,8 @@ export const AppProvider = ({ children })=>{
     const value = {
         navigate, currency, axios, user, setUser,
         token, setToken, isOwner, setIsOwner, fetchUser, showLogin, setShowLogin, logout, fetchCars, cars, setCars, 
-        pickupDate, setPickupDate, returnDate, setReturnDate
+        pickupDate, setPickupDate, returnDate, setReturnDate, showForgotPassword,
+       setShowForgotPassword
     }
 
     return (

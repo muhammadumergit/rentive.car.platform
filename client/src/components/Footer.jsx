@@ -31,7 +31,7 @@ const Footer = () => {
                         transition={{ duration: 0.5, delay: 0.4 }}
 
                     className='max-w-80 mt-3'>
-                        Premium rentivo smart car reservation platform service with a wide selection of luxury and everyday vehicles for all your driving needs.
+                        Rentivo smart car reservation platform service with a wide selection of luxury and everyday vehicles for all your driving needs.
                     </motion.p>
                     <motion.div 
                         initial={{ opacity: 0 }}
@@ -79,7 +79,7 @@ const Footer = () => {
                         <li>1234 Model Colony</li>
                         <li>Malir Karachi, pakistan</li>
                         <li>+92 347-0296793</li>
-                        <li>muhammadumar0771@gmail.com</li>
+                        <li>muhammadumersmiu@gmail.com</li>
                     </ul>
                 </div>
 

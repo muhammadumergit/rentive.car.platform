@@ -23,7 +23,7 @@ const FeaturedSection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
         >
-            <Title title='Featured Vehicles' subTitle='Explore our selection of premium vehicles available for your next adventure.'/>
+            <Title title='Featured Vehicles' subTitle='Explore our selection of vehicles available for your next adventure.'/>
         </motion.div>
 
         <motion.div 

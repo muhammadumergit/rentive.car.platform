@@ -7,12 +7,12 @@ const Testimonial = () => {
 
     const testimonials = [
         { name: "Muhammad Arqum Tariq", 
-          location: "Karachi, Pakistan", 
+          location: "Lahore, Pakistan", 
           image: assets.testimonial_image_1, 
           testimonial: "I've rented cars from various companies, but the experience with Rentiov was exceptional." 
         },
         { name: "Muhammad Umer", 
-          location: "Lahore, Pakistan", 
+          location: "Karachi, Pakistan", 
           image: assets.testimonial_image_2, 
           testimonial: "Rentiov made my trip so much easier. The car was delivered right to my door, and the customer service was fantastic!" 
         },

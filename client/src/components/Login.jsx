@@ -4,7 +4,7 @@ import toast from 'react-hot-toast';
 
 const Login = () => {
 
-    const {setShowLogin, axios, setToken, navigate} = useAppContext()
+    const {setShowLogin, setShowForgotPassword, axios, setToken, navigate} = useAppContext()
 
     const [state, setState] = React.useState("login");
     const [name, setName] = React.useState("");
@@ -14,7 +14,7 @@ const Login = () => {
     const onSubmitHandler = async (event)=>{
         try {
             event.preventDefault();
-            const {data} = await axios.post(`/api/user/${state}`, {name, email, password})
+            const { data } = await axios.post(`/api/user/${state}`, { name, email, password });
 
             if (data.success) {
                 navigate('/')
@@ -29,6 +29,11 @@ const Login = () => {
             toast.error(error.message)
         }
         
+    }
+
+    const handleForgotPassword = () => {
+        setShowLogin(false);
+        setShowForgotPassword(true);
     }
 
   return (
@@ -52,6 +57,16 @@ const Login = () => {
                 <p>Password</p>
                 <input onChange={(e) => setPassword(e.target.value)} value={password} placeholder="type here" className="border border-gray-200 rounded w-full p-2 mt-1 outline-primary" type="password" required />
             </div>
+            
+            {/* Forgot Password Link - Only show in login state */}
+            {state === "login" && (
+                <p className="text-xs text-right w-full -mt-2">
+                    <span onClick={handleForgotPassword} className="text-primary cursor-pointer hover:underline">
+                        Forgot Password?
+                    </span>
+                </p>
+            )}
+            
             {state === "register" ? (
                 <p>
                     Already have account? <span onClick={() => setState("login")} className="text-primary cursor-pointer">click here</span>
